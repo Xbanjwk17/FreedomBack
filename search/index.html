@@ -8,10 +8,26 @@
 </head>
 <body>
     <h1>About <strong class="results">0</strong> Results</h1>
-    <input type="text" name="Search txt" id="txt-search">
+    <input class="getinput" onkeyup="config()" type="text" name="Search txt" id="txt-search">
     <a href="https://xbanjwk17.github.io/FreedomBack/user/Xbanjwk">Xbanjwk (0 Views)</a>
     <script>
+        function config() {
+            var fliter, valueText, resultItem;
 
+            var input = document.querySelector(".getinput")
+            filter = input.value.toUpperCase();
+            var configA = document.getElementsByTagName("a")
+
+            for (i = 0; i < configA.length; i++) {
+                 resultItem = document.getElementsByTagName("a");
+                valueText = resultItem.textContent || resultItem.innerText;
+                if (valueText.toUpperCase().indexOf(filter) > -1) {
+                configA[i].style.display = "";
+            } else {
+            configA[i].style.display = "none";
+            }
+         }
+        }
     </script>
 </body>
 </html>
